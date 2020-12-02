@@ -39,6 +39,15 @@ identical(t2new,t2pub)
 compare::compareEqual(t2new,t2pub)
 ```
 
+## Suggestions for Implementation
+
+* Use R 4.0.X or greater.
+* Install (at least) the following packages from CRAN -- `FSA`, `ggnewscale`, `patchwork`, `tidyverse`, and `TMB`.
+    * `TMB` uses C++ and may require some "finesse" to install. See [this page for help](https://github.com/kaskr/adcomp/wiki/Download).
+    * My full session info [is shown below.](#my-session-information)
+* The `FSAsim` package is NOT available on CRAN, but can be installed from its GitHub repository [as described here](https://github.com/droglenc/FSAsim#installation).
+* By default there are 15 simulation scenarios with 500 iterations each, each of which his computationally heavy. To "test your setup" we suggest changing `numReps` on line 29 of **Run_Simulation.R** from 500 to 5 (or so) at first to make sure that all packages are installed, the file structure is correct, etc. After a successful run with these few iterations then change `numReps` back to 500 to reproduce the analyses of Lusk *et al.* (2021).
+
 ## My Session Information
 
 ```
