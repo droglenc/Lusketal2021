@@ -1,0 +1,16 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Stuff in Derek's R Project not to be sent to the repo
+zzz_NO_GITHUB/
+
+# Files created by the C++ code
+code/EPfuns/EP_likelihood.dll
+code/EPfuns/EP_likelihood.o
+
+# Files created by most recent runs ... but don't want to clutter repo with
+data/Simulation_Run_Results.csv
+docs/Table2_raw.csv
+docs/Figure_*
