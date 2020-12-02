@@ -12,12 +12,12 @@ The pertinent analysis files are described below.
     * **Visualizing_Fits_Figure.R** -- Produces Figure 5 that illustrates examples of length and age data with model fits.
     * **Common.R** -- Common items and parameters (e.g., Table 1) for the simulations.
     * **EPfuns/**
-        * **EPGrowth.R** -- creates two R functions -- `EPdata_prep()` and `EPrun()` used in **Run_Simulation.R** for the *empirical proportions* methods of Perrault *et al.* (2020).
+        * **EPGrowth.R** -- creates two R functions -- `EPdata_prep()` and `EPrun()` used in **Run_Simulation.R** for the *empirical proportions* methods of Perreault *et al.* (2020).
         * **EP_likelihood.cpp** -- C++ code used by **EPGrowth.R** for the maximum likelihood method of Perreault *et al.* (per Perreault). Note that when **Common.R** is run that two new files -- **EP_likelihood.dll** and **EP_likelihood.o** -- will be created. If you get errors when running the empirical proportions portion of the code you may want to delete these two files so that they will be created fresh.
 
 * **data/**
     * Ultimately a file called **Simulation_Run_Results.csv** will be created here by running **Run_Simulation.R**. This file, when created, is used in **Simulation_Results.R**.
-    * **Simulation_Run_Results_PUBLISHED.csv** -- This is what the **Simulation_Run_Results.csv** file looked like at the time of publication. It is here for archival purposes, but also as a check against any new version of the file that is created by running **Simulation_Run_Results.csv**. Use the following to compare a newly created **Simulation_Run_Results.csv** with **Simulation_Run_Results_PUBLISHED.csv**. The last three lines should all say `TRUE` (thought `all()` and `identical()` may get caught up on minor differences due to machine infrastructre).
+    * **Simulation_Run_Results_PUBLISHED.csv** -- This is what the **Simulation_Run_Results.csv** file looked like at the time of publication. It is here for archival purposes, but also as a check against any new version of the file that is created by running **Simulation_Run_Results.csv**. Use the following to compare a newly created **Simulation_Run_Results.csv** with **Simulation_Run_Results_PUBLISHED.csv**. The last three lines should all say `TRUE` (thought `all()` and `identical()` may get caught up on minor differences due to machine infrastructure).
 
 ```
 dnew <- read.csv("data/Simulation_Run_Results.csv")
@@ -29,7 +29,7 @@ compare::compareEqual(dnew,dpub)
 
 * **docs/**
     * Ultimately this will contains figures and tables created by running the analysis scripts described above.
-    * **Table2_raw_PUBLISHED.csv** -- This is what the **Table2_raw.csv** file looked like at the time of publication (note that this was used to create Tables 2-5 outside of R). It is here as a check against any new version of the file that is created by running the scripts described above. The last three lines should all say `TRUE` (thought `all()` and `identical()` may get caught up on minor differences due to machine infrastructre).
+    * **Table2_raw_PUBLISHED.csv** -- This is what the **Table2_raw.csv** file looked like at the time of publication (note that this was used to create Tables 2-5 outside of R). It is here as a check against any new version of the file that is created by running the scripts described above. The last three lines should all say `TRUE` (thought `all()` and `identical()` may get caught up on minor differences due to machine infrastructure).
 
 ```
 t2new <- read.csv("docs/Table2_Raw.csv")
@@ -47,7 +47,8 @@ compare::compareEqual(t2new,t2pub)
     * You will also need `compare` if you want to compare data files and summary tables created with this code to what was published.
     * My full session info [is shown below.](#my-session-information)
 * The `FSAsim` package is NOT available on CRAN, but can be installed from its GitHub repository [as described here](https://github.com/droglenc/FSAsim#installation).
-* By default there are 15 simulation scenarios with 500 iterations each, each of which his computationally heavy. To "test your setup" we suggest changing `numReps` on line 29 of **Run_Simulation.R** from 500 to 5 (or so) at first to make sure that all packages are installed, the file structure is correct, etc. After a successful run with these few iterations then change `numReps` back to 500 to reproduce the analyses of Lusk *et al.* (2021).
+* We suggest running the code in an RStudio Project environment. If you do not do this then you may need to change some directories (search for `here::here()` code in the scripts).
+* By default there are 15 simulation scenarios with 500 iterations each, each of which is computationally heavy. To "test your setup" we suggest changing `numReps` on line 29 of **Run_Simulation.R** from 500 to 5 (or so) at first to make sure that all packages are installed, the file structure is correct, etc. After a successful run with these few iterations then change `numReps` back to 500 to reproduce the analyses of Lusk *et al.* (2021).
 
 ## My Session Information
 
